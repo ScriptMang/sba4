@@ -12,4 +12,11 @@ taskButton.addEventListener("click", function(){
             return;
         }
     }
+    let task = {
+        name: taskInput.value,
+        category: categoryInput.value,
+        deadline: deadlineInput.value,
+        initialStatus:initialStatusInput.value 
+    };
+    console.log(task);
 });
