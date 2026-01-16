@@ -2,10 +2,10 @@ let taskButton = document.getElementById("addTaskButton");
 let taskInput = document.getElementById("taskInput");
 let categoryInput = document.getElementById("categoryInput");
 let deadlineInput = document.getElementById("deadlineInput");
-let initialStatusInput = document.getElementById("initialStatusInput");
+let statusInput = document.getElementById("statusInput");
 
 taskButton.addEventListener("click", function(){
-    let inputFields = [taskInput, categoryInput, deadlineInput, initialStatusInput];
+    let inputFields = [taskInput, categoryInput, deadlineInput, statusInput];
     for (let inputField of inputFields) {
         if (inputField.value === "") {
             alert("No input field can be empty");
@@ -16,7 +16,7 @@ taskButton.addEventListener("click", function(){
         name: taskInput.value,
         category: categoryInput.value,
         deadline: deadlineInput.value,
-        initialStatus:initialStatusInput.value 
+        status:statusInput.value 
     };
     console.log(task);
 });
