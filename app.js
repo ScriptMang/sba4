@@ -4,6 +4,7 @@ let categoryInput = document.getElementById("categoryInput");
 let deadlineInput = document.getElementById("deadlineInput");
 let statusInput = document.getElementById("statusInput");
 
+const taskList = [];
 taskButton.addEventListener("click", function(){
     let inputFields = [taskInput, categoryInput, deadlineInput, statusInput];
     for (let inputField of inputFields) {
