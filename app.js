@@ -33,17 +33,22 @@ function displayList() {
     list.textContent = "";
     let taskCount = 0;
     for(let task of taskList){
+       
         let listItem = document.createElement("li");
         let updateStatusButton = document.createElement("button");
         updateStatusButton.textContent = 'done';
+       
         let spanStatus = document.createElement("span");
         spanStatus.textContent = task['status'];
         spanStatus.style = task['status'] !== "done" ? 'color: red;': 'color: green';
+       
         listItem.textContent = `Task${++taskCount}: `+ task['name'] + ' ' + 
-        task['category'] + ' ' + task['deadline'] + ' ';
+        task['category'] + ' ' + task['deadline']+'sec' + ' ';
+       
         listItem.appendChild(spanStatus);
         listItem.appendChild(updateStatusButton);
         list.appendChild(listItem);
+       
         updateStatusButton.addEventListener('click', function(){
             task['status'] = 'done';
             displayList();
