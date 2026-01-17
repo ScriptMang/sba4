@@ -54,9 +54,10 @@ function displayList() {
         const deadlineMs = task['deadline'] * 1000;
         if (elapsedTime > deadlineMs && task['status'] !== "OverDue") {
             task['status'] = 'OverDue';
+            spanStatus.style = 'color: red;';
             displayList();
         }
-        spanStatus.style = task['status'] !== "done" ? 'color: red;': 'color: green';
+        spanStatus.style = task['status'] !== "done" ? 'color: black;': 'color: green';
         listItem.textContent = `Task${++taskCount}: `+ task['name'] + ' ' + 
         task['category'] + ' ' + task['deadline']+'sec' + ' ';
        
