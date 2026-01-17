@@ -3,6 +3,7 @@ let taskInput = document.getElementById("taskInput");
 let categoryInput = document.getElementById("categoryInput");
 let deadlineInput = document.getElementById("deadlineInput");
 let statusInput = document.getElementById("statusInput");
+let list = document.getElementById('taskList');
 
 const taskList = [];
 taskButton.addEventListener("click", function(){
@@ -25,4 +26,16 @@ taskButton.addEventListener("click", function(){
     for (let task of taskList) {
         console.log(`task${++taskCount}: \n` + Object.values(task));
     }
+    displayList();
 });
+
+function displayList() {
+    list.textContent = "";
+    let taskCount = 0;
+    for(let task of taskList){
+        let listItem = document.createElement("li");
+        listItem.textContent = `Task${++taskCount}: `+ task['name'] + ' ' + 
+        task['category'] + ' ' + task['deadline'] +' ' + task['status'];
+        list.appendChild(listItem);
+    }
+}
