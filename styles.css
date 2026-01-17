@@ -2,3 +2,11 @@ input {
     display: flex;
     flex-direction: column;
 }
+li {
+    display: flex;
+    justify-content: center;
+}
+
+li > button {
+    margin-left: 10px;
+}
