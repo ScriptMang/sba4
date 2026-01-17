@@ -25,7 +25,8 @@ taskButton.addEventListener("click", function(){
         name: taskInput.value,
         category: categoryInput.value,
         deadline: deadlineInput.value,
-        status:statusInput.value 
+        status:statusInput.value, 
+        startTime: Date.now()
     };
     // console.log(task);
     taskList.push(task);
@@ -33,6 +34,7 @@ taskButton.addEventListener("click", function(){
     // for (let task of taskList) {
     //     console.log(`task${++taskCount}: \n` + Object.values(task));
     // }
+
     displayList();
     emptyInputFields(inputFields);
 });
