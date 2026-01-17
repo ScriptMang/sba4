@@ -2,10 +2,18 @@ input {
     display: flex;
     flex-direction: column;
 }
+
 li {
     display: flex;
     justify-content: center;
 }
+
+span {
+    font-weight: bold;
+    font-size: medium;
+    margin-left: 10px;
+}
+
 
 li > button {
     margin-left: 10px;
