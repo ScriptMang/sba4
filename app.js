@@ -50,8 +50,13 @@ function displayList() {
        
         let spanStatus = document.createElement("span");
         spanStatus.textContent = task['status'];
+        const elapsedTime = Date.now() - task['startTime'];
+        const deadlineMs = task['deadline'] * 1000;
+        if (elapsedTime > deadlineMs && task['status'] !== "OverDue") {
+            task['status'] = 'OverDue';
+            displayList();
+        }
         spanStatus.style = task['status'] !== "done" ? 'color: red;': 'color: green';
-       
         listItem.textContent = `Task${++taskCount}: `+ task['name'] + ' ' + 
         task['category'] + ' ' + task['deadline']+'sec' + ' ';
        
