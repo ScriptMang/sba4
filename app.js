@@ -5,6 +5,13 @@ let deadlineInput = document.getElementById("deadlineInput");
 let statusInput = document.getElementById("statusInput");
 let list = document.getElementById('taskList');
 
+
+function emptyInputFields(fields) {
+    for (let field of fields){
+        field.value = "";
+    }
+}
+
 const taskList = [];
 taskButton.addEventListener("click", function(){
     let inputFields = [taskInput, categoryInput, deadlineInput, statusInput];
@@ -27,6 +34,7 @@ taskButton.addEventListener("click", function(){
         console.log(`task${++taskCount}: \n` + Object.values(task));
     }
     displayList();
+    emptyInputFields(inputFields);
 });
 
 function displayList() {
