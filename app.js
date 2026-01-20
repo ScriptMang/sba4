@@ -1,9 +1,9 @@
-let taskButton = document.getElementById("addTaskButton");
-let taskInput = document.getElementById("taskInput");
-let categoryInput = document.getElementById("categoryInput");
-let deadlineInput = document.getElementById("deadlineInput");
-let statusInput = document.getElementById("statusInput");
-let list = document.getElementById('taskList');
+const taskButton = document.getElementById("addTaskButton");
+const taskInput = document.getElementById("taskInput");
+const categoryInput = document.getElementById("categoryInput");
+const deadlineInput = document.getElementById("deadlineInput");
+const statusInput = document.getElementById("statusInput");
+const list = document.getElementById('taskList');
 
 
 function emptyInputFields(fields) {
@@ -39,12 +39,12 @@ function displayList() {
     for(let task of taskList){
        
         // create list-item and the done button
-        let listItem = document.createElement("li");
-        let updateStatusButton = document.createElement("button");
+        const listItem = document.createElement("li");
+        const updateStatusButton = document.createElement("button");
         updateStatusButton.textContent = 'done';
        
         // create task status
-        let spanStatus = document.createElement("span");
+        const spanStatus = document.createElement("span");
         spanStatus.textContent = task['status'];
         const elapsedTime = Date.now() - task['startTime'];
         const deadlineMs = task['deadline'] * 1000;
