@@ -28,13 +28,7 @@ taskButton.addEventListener("click", function(){
         status:statusInput.value, 
         startTime: Date.now()
     };
-    // console.log(task);
     taskList.push(task);
-    // let taskCount = 0;
-    // for (let task of taskList) {
-    //     console.log(`task${++taskCount}: \n` + Object.values(task));
-    // }
-
     displayList();
     emptyInputFields(inputFields);
 });
