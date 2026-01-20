@@ -57,7 +57,6 @@ function displayList() {
             task['status'] = 'OverDue';
             spanStatus.textContent = task['status'];
             spanStatus.style = 'color: red;';
-            // displayList();
         } else if (task['status'] !== 'OverDue') {
             spanStatus.style = task['status'] !== "done" ? 'color: black;': 'color: green';
         }
