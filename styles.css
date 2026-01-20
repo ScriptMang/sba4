@@ -3,6 +3,10 @@ input {
     flex-direction: column;
 }
 
+#list-title {
+    text-align: center;
+}
+
 li {
     display: flex;
     justify-content: center;
