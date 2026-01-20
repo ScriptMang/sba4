@@ -52,12 +52,15 @@ function displayList() {
         spanStatus.textContent = task['status'];
         const elapsedTime = Date.now() - task['startTime'];
         const deadlineMs = task['deadline'] * 1000;
-        if (elapsedTime > deadlineMs && task['status'] !== "OverDue") {
+        if (elapsedTime > deadlineMs && task['status'] === 'in progress'
+             || task['status'] === 'OverDue') {
             task['status'] = 'OverDue';
+            spanStatus.textContent = task['status'];
             spanStatus.style = 'color: red;';
-            displayList();
+            // displayList();
+        } else if (task['status'] !== 'OverDue') {
+            spanStatus.style = task['status'] !== "done" ? 'color: black;': 'color: green';
         }
-        spanStatus.style = task['status'] !== "done" ? 'color: black;': 'color: green';
         listItem.textContent = `Task${++taskCount}: `+ task['name'] + ' ' + 
         task['category'] + ' ' + task['deadline']+'sec' + ' ';
        
