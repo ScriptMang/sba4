@@ -18,6 +18,11 @@ span {
     margin-left: 10px;
 }
 
+#filterTasksContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
 
 li > button {
     margin-left: 10px;
