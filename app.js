@@ -5,6 +5,7 @@ const deadlineInput = document.getElementById("deadlineInput");
 const statusInput = document.getElementById("statusInput");
 const list = document.getElementById('taskList');
 const filterButton = document.getElementById('filterTasksButton');
+const filterChoice = document.getElementById('filterSelect');
 
 function emptyInputFields(fields) {
     for (let field of fields){
@@ -34,8 +35,16 @@ taskButton.addEventListener("click", function(){
 });
 
 
+// assumes the task list has list-items
 filterButton.addEventListener("click" , () => {
-
+    switch (filterChoice.value){
+        case "status":
+            console.log('Filter for status');
+            break;
+        case "category":
+            console.log('Filter for category');
+            break;
+        }    
 });
 
 function displayList() {
