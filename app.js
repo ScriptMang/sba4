@@ -4,7 +4,7 @@ const categoryInput = document.getElementById("categoryInput");
 const deadlineInput = document.getElementById("deadlineInput");
 const statusInput = document.getElementById("statusInput");
 const list = document.getElementById('taskList');
-
+const filterButton = document.getElementById('filterTasksButton');
 
 function emptyInputFields(fields) {
     for (let field of fields){
@@ -31,6 +31,11 @@ taskButton.addEventListener("click", function(){
     taskList.push(task);
     displayList();
     emptyInputFields(inputFields);
+});
+
+
+filterButton.addEventListener("click" , () => {
+
 });
 
 function displayList() {
