@@ -6,6 +6,7 @@ const statusInput = document.getElementById("statusInput");
 const list = document.getElementById('taskList');
 const filterButton = document.getElementById('filterTasksButton');
 const filterChoice = document.getElementById('filterSelect');
+const filterSearch = document.getElementById('filterSearch');
 
 function emptyInputFields(fields) {
     for (let field of fields){
@@ -34,12 +35,23 @@ taskButton.addEventListener("click", function(){
     emptyInputFields(inputFields);
 });
 
+const filterList=[];
+let tempList=[];
+function filterForStatus(search){
+    for (let task of taskList) {
+        if (task['status'] === search){
+            filterList.push(task);
+        }
+    }
+}
 
 // assumes the task list has list-items
-filterButton.addEventListener("click" , () => {
+filterButton.addEventListener("click", () => {
+    const search = filterSearch.value
     switch (filterChoice.value){
         case "status":
             console.log('Filter for status');
+            filterForStatus(search);
             break;
         case "category":
             console.log('Filter for category');
