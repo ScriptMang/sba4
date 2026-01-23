@@ -5,6 +5,7 @@ const deadlineInput = document.getElementById("deadlineInput");
 const statusInput = document.getElementById("statusInput");
 const list = document.getElementById('taskList');
 const filterButton = document.getElementById('filterTasksButton');
+const resetButton = document.getElementById('resetFilterButton');
 const filterChoice = document.getElementById('filterSelect');
 const filterSearch = document.getElementById('filterSearch');
 
@@ -68,6 +69,10 @@ filterButton.addEventListener("click", () => {
             break;
         }    
 });
+
+resetButton.addEventListener("click", () =>{
+    displayList(taskList);
+})
 
 function displayList(taskList) {
     list.textContent = "";
