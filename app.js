@@ -105,7 +105,7 @@ function displayList(taskList) {
         // sets the task's status to done and refresh the list
         updateStatusButton.addEventListener('click', function(){
             task['status'] = 'done';
-            displayList();
+            displayList(taskList);
         })
     }
 }
