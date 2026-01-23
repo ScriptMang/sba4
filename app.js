@@ -31,18 +31,18 @@ taskButton.addEventListener("click", function(){
         startTime: Date.now()
     };
     taskList.push(task);
-    displayList();
+    displayList(taskList);
     emptyInputFields(inputFields);
 });
 
 const filterList=[];
-let tempList=[];
-function filterForStatus(search){
+function filterForStatus(search, taskList){
     for (let task of taskList) {
         if (task['status'] === search){
             filterList.push(task);
         }
     }
+    displayList(filterList)
 }
 
 // assumes the task list has list-items
@@ -51,7 +51,7 @@ filterButton.addEventListener("click", () => {
     switch (filterChoice.value){
         case "status":
             console.log('Filter for status');
-            filterForStatus(search);
+            filterForStatus(search, taskList);
             break;
         case "category":
             console.log('Filter for category');
@@ -59,7 +59,7 @@ filterButton.addEventListener("click", () => {
         }    
 });
 
-function displayList() {
+function displayList(taskList) {
     list.textContent = "";
     let taskCount = 0;
     for(let task of taskList){
