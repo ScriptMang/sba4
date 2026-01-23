@@ -36,8 +36,9 @@ taskButton.addEventListener("click", function(){
     emptyInputFields(inputFields);
 });
 
-const filterList=[];
+let filterList=[];
 function filterForStatus(search, taskList){
+    filterList = [];
     for (let task of taskList) {
         if (task['status'] === search){
             filterList.push(task);
@@ -47,6 +48,7 @@ function filterForStatus(search, taskList){
 }
 
 function filterForCategory(search, taskList){
+    filterList = [];
     for (let task of taskList) {
         if (task['category'] === search){
             filterList.push(task);
