@@ -15,6 +15,17 @@ function emptyInputFields(fields) {
     }
 }
 
+function addTaskToStorage(task) {
+    for (let property in task) {
+        if (typeof property !== Date) {
+            const currTime = String(task[property]);
+            localStorage.setItem(property, currTime);
+        } else {
+            localStorage.setItem(property, task[property]);
+        }
+    }
+}
+
 const taskList = [];
 taskButton.addEventListener("click", function(){
     let inputFields = [taskInput, categoryInput, deadlineInput, statusInput];
@@ -31,6 +42,8 @@ taskButton.addEventListener("click", function(){
         status:statusInput.value, 
         startTime: Date.now()
     };
+
+    addTaskToStorage(task);
     taskList.push(task);
     displayList(taskList);
     emptyInputFields(inputFields);
