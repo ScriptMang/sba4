@@ -45,6 +45,15 @@ function filterForStatus(search, taskList){
     displayList(filterList)
 }
 
+function filterForCategory(search, taskList){
+    for (let task of taskList) {
+        if (task['category'] === search){
+            filterList.push(task);
+        }
+    }
+    displayList(filterList)
+}
+
 // assumes the task list has list-items
 filterButton.addEventListener("click", () => {
     const search = filterSearch.value
@@ -55,6 +64,7 @@ filterButton.addEventListener("click", () => {
             break;
         case "category":
             console.log('Filter for category');
+            filterForCategory(search, taskList);
             break;
         }    
 });
